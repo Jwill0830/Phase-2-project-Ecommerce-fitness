@@ -1,20 +1,18 @@
 import React from 'react';
-import Navigation from './Navigation';
-import Search from './Search';
-import Filter from './Filter';
-import List from './List';
-import Info from './Info';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import EquipmentMarketplace from './EquipmentMarketplace';
 
 const App = () => {
   return (
-    <div>
-      <Navigation />
-      <Search />
-      <Filter />
-      <List />
-      <Info />
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/equipment-marketplace" element={<EquipmentMarketplace />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
